@@ -1,47 +1,26 @@
 {
-  "name": "final-project",
+  "main": "./server/server.js",
+  "name": "spot-it-server",
+  "description": "server side for (web (react)  and mobile (react native)",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "16.13.0"
+  },
   "scripts": {
-    "dev": "nodemon server/server.js",
-    "client": "cd client && cd src && npm start",
-    "startLocal": "concurrently \"npm run dev\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server/server.js",
-    "heroku-postbuild": "npm install --prefix client && npm run build-react"
+    "dev": "nodemon ./server/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tahrer007/final-project.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tahrer007/final-project/issues"
-  },
-  "homepage": "https://github.com/tahrer007/final-project#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "concurrently": "^7.0.0",
+    "body-parser": "^1.20.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.0",
+    "mongoose": "^6.3.5",
     "morgan": "^1.10.0",
-    "react-google-places-autocomplete": "^3.3.2",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "^5.0.0",
-    "socket.io": "^4.5.1",
-    "validator": "^13.7.0",
-    "web-push": "^3.4.5"
-  },
-  "devDependencies": {
-    "cpy-cli": "^3.1.1",
-    "mkdirp": "^1.0.4",
-    "nodemon": "^2.0.15",
-    "rimraf": "^3.0.2"
+    "nodemon": "^2.0.16",
+    "socket.io": "^4.5.1"
   }
 }
