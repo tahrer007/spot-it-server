@@ -7,9 +7,24 @@ const port = process.env.PORT || 5000;
 //establish socket.io connection
 const app = express.init();
 const server = require("http").createServer(app);
-const io = require("socket.io")(server);
+//const io = require("socket.io")(server);
+const io = require("socket.io")(server, {
+  origins: "http://localhost:3000",
+  cors: {
+    origins: ["*"],
+    handelPrefLightRequest: (req, res) => {
+      res.writeHead(200, {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control=Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Headers": "my-custom-header",
+        "Access-Control-Allow-Credentials": true,
+      });
+      res.send();
+    },
+  },
+});
 
-io.of("/api/socket").on("connection", (socket) => {
+io.of("/socket").on("connection", (socket) => {
   console.log("socket.io: User connected: ", socket.id);
 
   socket.on("disconnect", () => {
@@ -37,8 +52,7 @@ connection.once("open", () => {
   thoughtChangeStream.on("change", (change) => {
     switch (change.operationType) {
       case "insert":
-
-        console.log("zzzz Server zzzzzzz" , change.fullDocument);
+        console.log("Server", change.fullDocument);
         io.of("/socket").emit("newLocation", change.fullDocument);
         break;
     }

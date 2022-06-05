@@ -2,7 +2,6 @@ const path = require("path"),
   express = require("express"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
-  
   cors = require("cors");
 
 module.exports.init = () => {
@@ -20,18 +19,17 @@ module.exports.init = () => {
 
   //add routers
   const locationsRouter = require("../routers/locationsRouter");
-const usersRouter = require("../routers/usersRouter");
-const keysRouter = require("../routers/keysRouter");
-const authRouter = require("../routers/authRouter");
+  const usersRouter = require("../routers/usersRouter");
+  const keysRouter = require("../routers/keysRouter");
+  const authRouter = require("../routers/authRouter");
 
-app.use(authRouter);
-app.use("/users", usersRouter);
-app.use("/locations", locationsRouter);
-app.use("/keys", keysRouter);
-app.get("/testServer",(req,res)=>{
-  res.send('ok');
-})
-
+  app.use(authRouter);
+  app.use("/users", usersRouter);
+  app.use("/locations", locationsRouter);
+  app.use("/keys", keysRouter);
+  app.get("/testServer", (req, res) => {
+    res.send("ok");
+  });
 
   //for production build
   if (process.env.NODE_ENV === "production") {
