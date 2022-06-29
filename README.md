@@ -1,6 +1,6 @@
 # spot-it-server
  
-![logo](/client/src/assets/images/readme.png "Optional Title")
+![logo](https://raw.githubusercontent.com/tahrer007/spot-it-web-client/main/client/src/assets/images/readme.png "Optional Title")
 # SPOT IT
 
 ## About me
