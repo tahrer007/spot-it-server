@@ -24,10 +24,10 @@ the app shows all the locations of spotted boars in the last 48 hours. as well a
 
 ## From the App
 * ### desktop
-![desktop](/client/src/assets/images/readMe/desktop1.png "Optional Title")
-![desktop2](/client/src/assets/images/readMe/desktop2.png "Optional Title")
+![desktop](https://raw.githubusercontent.com/tahrer007/spot-it-web-client/main/client/src/assets/images/readMe/desktop1.png "Optional Title")
+![desktop2](https://raw.githubusercontent.com/tahrer007/spot-it-web-client/main/client/src/assets/images/readMe/desktop2.png "Optional Title")
 *  ### mobile (only landscape)
-![mobile](/client/src/assets/images/readMe/mobile.png "Optional Title")
+![mobile](https://raw.githubusercontent.com/tahrer007/spot-it-web-client/main/client/src/assets/images/readMe/mobile.png "Optional Title")
 
 ## technology 
 ### client 
